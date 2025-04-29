@@ -230,8 +230,12 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to Hotel101 Fort</h1>
-    <p>Explore the best of BGC and Taguig from our doorstep!</p>
+    <h1 data-en="Welcome to Hotel101 Fort" data-fil="Maligayang pagdating sa Hotel101 Fort" data-zh="欢迎来到Hotel101 Fort">
+      Welcome to Hotel101 Fort
+    </h1>
+    <p data-en="Explore the best of BGC and Taguig from our doorstep!" data-fil="Tuklasin ang ganda ng BGC at Taguig mula sa aming hotel!" data-zh="从我们的酒店出发，探索BGC和塔吉格的精彩！">
+      Explore the best of BGC and Taguig from our doorstep!
+    </p>
   </header>
 
   <div class="language-switcher">
@@ -512,6 +516,13 @@
     gallery.innerHTML = `<img src="${details.images[currentImageIndex]}" alt="Image">`;
   }
 </script>
+<script>
+    function changeLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+    }
+  </script>
 
 </body>
 </html>
